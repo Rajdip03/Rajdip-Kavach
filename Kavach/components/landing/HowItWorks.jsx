@@ -42,7 +42,7 @@ export default function HowItWorks() {
         {steps.map((step) => (
           <Card key={step.id} className="relative overflow-hidden group hover:border-blue-100">
             <CardHeader className="flex flex-row justify-between items-start">
-              <span className="text-3xl font-black text-gray-100 group-hover:text-blue-50 transition-colors">{step.id}</span>
+              <span className="text-3xl font-black text-gray-100 group-hover:text-blue-600 transition-colors">{step.id}</span>
               <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                 <step.icon className="w-5 h-5" />
               </div>
