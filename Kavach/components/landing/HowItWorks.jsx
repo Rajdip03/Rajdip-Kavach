@@ -1,58 +1,66 @@
 import React from 'react';
-import { Card, CardHeader, CardContent } from '@/components/ui/Card';
 import { Copy, Activity, AlertCircle, ShieldCheck } from 'lucide-react';
 
+const steps = [
+  {
+    id: '01',
+    icon: Copy,
+    title: 'Submit suspicious content',
+    description: 'Paste any link, email sender, or SMS body into our instant inspector. No credentials needed.',
+  },
+  {
+    id: '02',
+    icon: Activity,
+    title: 'Analyze security indicators',
+    description: 'Multi-vector scan evaluates domain age, spoofing signals, TLS validity, and known threat lists.',
+  },
+  {
+    id: '03',
+    icon: AlertCircle,
+    title: 'Understand potential risks',
+    description: 'Plain-language risk score and clear breakdown without confusing technical cyber-speak.',
+  },
+  {
+    id: '04',
+    icon: ShieldCheck,
+    title: 'Take recommended action',
+    description: 'Practical, immediate guidance on what to do next to safeguard your accounts and data.',
+  },
+];
+
 export default function HowItWorks() {
-  const steps = [
-    {
-      id: "01",
-      title: "Submit suspicious content",
-      description: "Paste any link, email header, or SMS body into our threat inspector for immediate review.",
-      icon: Copy
-    },
-    {
-      id: "02",
-      title: "Analyze security indicators",
-      description: "Multi-vector scan evaluates domain age, spoofing signals, SSL validity, and known threat lists.",
-      icon: Activity
-    },
-    {
-      id: "03",
-      title: "Understand potential risks",
-      description: "View transparent risk scores and clear breakdowns without confusing technical jargon.",
-      icon: AlertCircle
-    },
-    {
-      id: "04",
-      title: "Take recommended action",
-      description: "Follow clear, immediate guidance on what to do next to safeguard your accounts and data.",
-      icon: ShieldCheck
-    }
-  ];
-
   return (
-    <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center max-w-2xl mx-auto mb-16">
-        <h2 className="text-sm font-bold text-blue-600 uppercase tracking-wider mb-3">Simple 4-Step Process</h2>
-        <h3 className="text-3xl font-bold text-gray-900 mb-4">How It Works</h3>
-        <p className="text-gray-600">A clear, 4-step framework designed for everyday reassurance without technical jargon.</p>
-      </div>
+    <section className="w-full py-16 bg-[#F8FAFC]">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-12 flex flex-col gap-12">
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {steps.map((step) => (
-          <Card key={step.id} className="relative overflow-hidden group hover:border-blue-100">
-            <CardHeader className="flex flex-row justify-between items-start">
-              <span className="text-3xl font-black text-gray-100 group-hover:text-blue-600 transition-colors">{step.id}</span>
-              <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                <step.icon className="w-5 h-5" />
+        {/* Header */}
+        <div className="flex flex-col gap-2 text-center max-w-2xl mx-auto">
+          <span className="text-xs font-semibold uppercase tracking-widest text-blue-600">Simple 4-Step Process</span>
+          <h2 className="text-3xl font-semibold text-slate-900 tracking-tight">How It Works</h2>
+          <p className="text-base text-slate-500">
+            A clear, 4-step assessment designed for everyday reassurance without technical jargon.
+          </p>
+        </div>
+
+        {/* Steps Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {steps.map((step) => (
+            <div
+              key={step.id}
+              className="flex flex-col p-6 rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow gap-4"
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-xl font-bold text-blue-600">{step.id}</span>
+                <div className="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center text-blue-600">
+                  <step.icon className="w-5 h-5" />
+                </div>
               </div>
-            </CardHeader>
-            <CardContent>
-              <h4 className="text-lg font-bold text-gray-900 mb-2">{step.title}</h4>
-              <p className="text-sm text-gray-500 leading-relaxed">{step.description}</p>
-            </CardContent>
-          </Card>
-        ))}
+              <h3 className="text-base font-semibold text-slate-900">{step.title}</h3>
+              <p className="text-sm text-slate-500 leading-relaxed">{step.description}</p>
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
   );

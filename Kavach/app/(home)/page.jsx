@@ -8,7 +8,7 @@ import CtaBanner from '@/components/landing/CtaBanner';
 
 export default function HomePage() {
   return (
-    <main className="flex flex-col gap-y-24 py-10">
+    <main className="flex flex-col">
       <HeroSection />
       <StatsBar />
       <HowItWorks />

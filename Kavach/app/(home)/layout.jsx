@@ -4,7 +4,7 @@ import Footer from '@/components/layout/Footer';
 
 export default function HomeLayout({ children }) {
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAFAFA]">
+    <div className="min-h-screen flex flex-col bg-[#F8FAFC]">
       <Navbar />
       <main className="flex-grow">
         {children}
