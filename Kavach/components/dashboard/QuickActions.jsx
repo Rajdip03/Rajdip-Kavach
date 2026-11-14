@@ -7,28 +7,28 @@ const actions = [
     title: 'Scan a URL',
     description: 'Paste any link to instantly check if it leads to a phishing or malware site.',
     cta: 'Inspect link',
-    href: '/dashboard/scan-center',
+    href: '/dashboard/scan-center?type=url',
   },
   {
     icon: MessageSquare,
     title: 'Scan a Message',
     description: 'Paste SMS, WhatsApp or email text to detect scam patterns and suspicious intent.',
     cta: 'Paste text',
-    href: '/dashboard/scan-center',
+    href: '/dashboard/scan-center?type=message',
   },
   {
     icon: Globe,
     title: 'Check a Website',
     description: 'Verify domain age, SSL status, and reputation before entering personal details.',
     cta: 'Check site',
-    href: '/dashboard/scan-center',
+    href: '/dashboard/scan-center?type=website',
   },
   {
     icon: Briefcase,
     title: 'Check a Job Offer',
     description: 'Analyze job postings for red flags like advance fees, vague roles, or fake companies.',
     cta: 'Evaluate offer',
-    href: '/dashboard/scan-center',
+    href: '/dashboard/scan-center?type=job',
   },
 ];
 
