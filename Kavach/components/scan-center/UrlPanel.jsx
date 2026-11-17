@@ -1,10 +1,16 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Link2, X, Search, RotateCcw, Lock } from 'lucide-react';
 
 export default function UrlPanel() {
+  const router = useRouter();
   const [url, setUrl] = useState('');
+
+  const handleAnalyze = () => {
+    router.push('/dashboard/scan-result/KW-849204-7X');
+  };
 
   return (
     <div className="flex flex-col gap-6">
@@ -49,7 +55,10 @@ export default function UrlPanel() {
       {/* Actions */}
       <div className="flex flex-wrap items-center justify-between gap-4 pt-1">
         <div className="flex items-center gap-2">
-          <button className="flex items-center gap-2 px-5 py-3 rounded-xl bg-[#0051D5] text-white hover:bg-[#0051D5]/90 transition-all text-sm font-semibold shadow-sm">
+          <button
+            onClick={handleAnalyze}
+            className="flex items-center gap-2 px-5 py-3 rounded-xl bg-[#0051D5] text-white hover:bg-[#0051D5]/90 transition-all text-sm font-semibold shadow-sm"
+          >
             <Search size={16} />
             <span>Analyze URL</span>
           </button>

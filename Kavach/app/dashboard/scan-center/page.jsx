@@ -3,7 +3,7 @@ import ScanCenterPage from '@/components/scan-center/ScanCenterPage';
 
 async function ScanCenterContent({ searchParams }) {
   const params = await searchParams;
-
+  
   const validTabs = ['url', 'message', 'website', 'job'];
   const requestedTab = params?.type;
   const initialTab = validTabs.includes(requestedTab) ? requestedTab : 'url';

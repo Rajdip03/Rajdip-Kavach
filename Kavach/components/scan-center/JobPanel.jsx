@@ -2,8 +2,10 @@
 
 import { useState } from 'react';
 import { Search } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function JobPanel() {
+  const router = useRouter();
   const [form, setForm] = useState({ position: '', company: '', link: '', details: '' });
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 
@@ -60,7 +62,12 @@ export default function JobPanel() {
         />
       </div>
       <div className="flex items-center gap-2">
-        <button className="flex items-center gap-2 px-5 py-3 rounded-xl bg-[#0051D5] text-white hover:bg-[#0051D5]/90 transition-all text-sm font-semibold shadow-sm">
+        <button
+          onClick={() =>
+            router.push('/dashboard/scan-result/KW-849204-7X')
+          }
+          className="flex items-center gap-2 px-5 py-3 rounded-xl bg-[#0051D5] text-white hover:bg-[#0051D5]/90 transition-all text-sm font-semibold shadow-sm"
+        >
           <Search size={16} />
           <span>Analyze Job Offer</span>
         </button>
