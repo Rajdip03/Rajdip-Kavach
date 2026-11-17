@@ -1,11 +1,17 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Globe, ShieldCheck } from 'lucide-react';
 
 export default function WebsitePanel() {
+  const router = useRouter();
   const [url, setUrl] = useState('');
   const [deepCheck, setDeepCheck] = useState(true);
+
+  const handleAnalyze = () => {
+    router.push('/dashboard/scan-result/KW-849204-7X');
+  };
 
   return (
     <div className="flex flex-col gap-6">
@@ -46,7 +52,10 @@ export default function WebsitePanel() {
         </label>
       </div>
       <div className="flex items-center gap-2">
-        <button className="flex items-center gap-2 px-5 py-3 rounded-xl bg-[#0051D5] text-white hover:bg-[#0051D5]/90 transition-all text-sm font-semibold shadow-sm">
+        <button
+          onClick={handleAnalyze}
+          className="flex items-center gap-2 px-5 py-3 rounded-xl bg-[#0051D5] text-white hover:bg-[#0051D5]/90 transition-all text-sm font-semibold shadow-sm"
+        >
           <ShieldCheck size={16} />
           <span>Check Website</span>
         </button>

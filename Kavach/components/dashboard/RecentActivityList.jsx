@@ -56,21 +56,26 @@ export default function RecentActivityList() {
 
       <ul className="flex flex-col divide-y divide-slate-50">
         {activities.map(({ type, icon: Icon, time, content, risk, riskColor }, idx) => (
-          <li key={idx} className="flex items-start gap-3 py-3 first:pt-0 last:pb-0">
-            <div className="w-9 h-9 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
-              <Icon size={16} className="text-slate-500" />
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2 mb-0.5">
-                <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide">{type}</span>
-                <span className="text-[11px] text-slate-300">·</span>
-                <span className="text-[11px] text-slate-400">{time}</span>
+          <li key={idx} className="first:pt-0 last:pb-0">
+            <Link
+              href="/dashboard/scan-result/KW-849204-7X"
+              className="flex items-start gap-3 py-3 rounded-lg hover:bg-slate-50 px-2 -mx-2 transition-colors group"
+            >
+              <div className="w-9 h-9 bg-slate-100 group-hover:bg-slate-200 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors">
+                <Icon size={16} className="text-slate-500" />
               </div>
-              <p className="text-sm text-[#101B35] truncate">{content}</p>
-            </div>
-            <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold flex-shrink-0 ${riskColor}`}>
-              {risk}
-            </span>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-0.5">
+                  <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide">{type}</span>
+                  <span className="text-[11px] text-slate-300">·</span>
+                  <span className="text-[11px] text-slate-400">{time}</span>
+                </div>
+                <p className="text-sm text-[#101B35] truncate group-hover:text-[#0051D5] transition-colors">{content}</p>
+              </div>
+              <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold flex-shrink-0 ${riskColor}`}>
+                {risk}
+              </span>
+            </Link>
           </li>
         ))}
       </ul>

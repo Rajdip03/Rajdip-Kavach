@@ -1,11 +1,17 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Search, Clipboard } from 'lucide-react';
 
 export default function MessagePanel() {
+  const router = useRouter();
   const [msg, setMsg] = useState('');
   const maxLen = 5000;
+
+  const handleAnalyze = () => {
+    router.push('/dashboard/scan-result/KW-849204-7X');
+  };
 
   const handlePaste = async () => {
     try {
@@ -44,7 +50,10 @@ export default function MessagePanel() {
       </div>
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div className="flex items-center gap-2">
-          <button className="flex items-center gap-2 px-5 py-3 rounded-xl bg-[#0051D5] text-white hover:bg-[#0051D5]/90 transition-all text-sm font-semibold shadow-sm">
+          <button
+            onClick={handleAnalyze}
+            className="flex items-center gap-2 px-5 py-3 rounded-xl bg-[#0051D5] text-white hover:bg-[#0051D5]/90 transition-all text-sm font-semibold shadow-sm"
+          >
             <Search size={16} />
             <span>Analyze Message</span>
           </button>
