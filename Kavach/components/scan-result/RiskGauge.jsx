@@ -35,7 +35,7 @@ export default function RiskGauge({ riskScore }) {
   const angleRad = Math.PI * (normalizedScore / 100);
   const endX = 100 - 80 * Math.cos(angleRad);
   const endY = 100 - 80 * Math.sin(angleRad);
-  const largeArcFlag = normalizedScore > 50 ? 1 : 0;
+  const largeArcFlag = 0;
 
   const segments = [
     { label: 'Low (0-30)', idx: 0 },
