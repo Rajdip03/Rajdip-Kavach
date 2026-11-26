@@ -2,9 +2,6 @@
 
 import { Search, ChevronDown, Calendar, ArrowUpDown, RotateCcw } from 'lucide-react';
 
-/**
- * Filter and search toolbar for Scan History.
- */
 export default function ScanHistoryToolbar({
   searchQuery,
   onSearchChange,

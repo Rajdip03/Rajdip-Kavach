@@ -12,9 +12,6 @@ import DetailCards from './DetailCards';
 import ComparativeTaxonomy from './ComparativeTaxonomy';
 import DisclaimerFooter from './DisclaimerFooter';
 
-/**
- * Standard variant presets matching the design spec.
- */
 const VARIANT_PRESETS = {
   high: {
     scanId: 'KW-849204-7X',
@@ -201,10 +198,6 @@ const VARIANT_PRESETS = {
     ],
   },
 };
-
-/**
- * Determines the initial risk variant key from a score.
- */
 function getVariantKey(score) {
   if (score >= 90) return 'critical';
   if (score >= 66) return 'high';
@@ -240,7 +233,6 @@ function getRiskLabel(riskLevel) {
  * @param {{ result?: object }} props – the initial scan result data object
  */
 export default function ScanResultPage({ result: initialResult }) {
-  // Determine initial variant from the provided data
   const initialKey = initialResult?.riskScore
     ? getVariantKey(initialResult.riskScore)
     : 'high';
@@ -248,8 +240,6 @@ export default function ScanResultPage({ result: initialResult }) {
   const [activeVariant, setActiveVariant] = useState(initialKey);
   const [useCustomData, setUseCustomData] = useState(true);
 
-  // If viewing the initial variant and custom data was provided, use it;
-  // otherwise, switch to the preset variant.
   const activeData =
     useCustomData && activeVariant === initialKey && initialResult
       ? { ...VARIANT_PRESETS[activeVariant], ...initialResult }
@@ -274,21 +264,16 @@ export default function ScanResultPage({ result: initialResult }) {
 
   return (
     <div className="max-w-[1200px] mx-auto flex flex-col py-6">
-      {/* Breadcrumb + Metadata + Actions */}
       <ScanResultHeader
         scanId={activeData.scanId || 'N/A'}
         scanLabel={scanLabel}
         scannedAt={scannedAt}
         scanType={activeData.scanType}
       />
-
-      {/* Simulation View Tabs */}
       <SimulationViewTabs
         activeVariant={activeVariant}
         onSelectVariant={handleSelectVariant}
       />
-
-      {/* Assessment Banner */}
       <AssessmentBanner
         riskLevel={riskLevel}
         title={activeData.title}
@@ -298,17 +283,12 @@ export default function ScanResultPage({ result: initialResult }) {
         confidenceScore={activeData.confidenceScore}
       />
 
-      {/* View Content based on risk tier and data shape */}
       {riskLevel === 'high' || (riskLevel === 'critical' && activeData.target) ? (
-        /* ---- TWO-COLUMN MASTER LAYOUT (High Risk / Detailed Sandbox) ---- */
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start mt-6">
-          {/* Left Column (5 cols): Gauge & Endpoint Profile */}
           <div className="lg:col-span-5 flex flex-col gap-6">
             <RiskGauge riskScore={riskScore} />
             {activeData.target && <TargetDetailsCard {...activeData.target} />}
           </div>
-
-          {/* Right Column (7 cols): Threat Indicators & Safety Actions */}
           <div className="lg:col-span-7 flex flex-col gap-6">
             {activeData.indicators && activeData.indicators.length > 0 && (
               <ThreatIndicators indicators={activeData.indicators} />
@@ -323,21 +303,16 @@ export default function ScanResultPage({ result: initialResult }) {
           </div>
         </div>
       ) : (
-        /* ---- THREE-COLUMN DETAIL CARDS (Critical / Medium / Low / Safe) ---- */
         <div className="mt-6">
           {activeData.detailCards && (
             <DetailCards cards={activeData.detailCards} />
           )}
         </div>
       )}
-
-      {/* Comparative Threat Taxonomy (4-tier calibration grid) */}
       <ComparativeTaxonomy
         activeVariant={activeVariant}
         onSelectVariant={handleSelectVariant}
       />
-
-      {/* Disclaimer Notice Footer */}
       <DisclaimerFooter />
     </div>
   );

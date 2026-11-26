@@ -28,9 +28,6 @@ export default function RiskGauge({ riskScore }) {
     activeColor = '#16A34A'; // green
     hazardLabel = 'Low Risk';
   }
-
-  // SVG arc calculation: map riskScore (0–100) to angle on a semicircle
-  // The arc spans from (20,100) to (180,100) with center at (100,100) and radius 80
   const normalizedScore = Math.min(100, Math.max(0, riskScore));
   const angleRad = Math.PI * (normalizedScore / 100);
   const endX = 100 - 80 * Math.cos(angleRad);

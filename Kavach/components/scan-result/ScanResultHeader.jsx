@@ -12,7 +12,6 @@ export default function ScanResultHeader({ scanId, scanLabel, scannedAt, scanTyp
   return (
     <div className="flex flex-col gap-4 mb-8">
       <div className="flex flex-wrap items-center justify-between gap-4">
-        {/* Left – breadcrumb + meta */}
         <div className="flex flex-col gap-1">
           <div className="flex items-center gap-2 flex-wrap">
             <Link
@@ -40,8 +39,6 @@ export default function ScanResultHeader({ scanId, scanLabel, scannedAt, scanTyp
             <span className="text-xs font-mono">Scan ID: {scanId}</span>
           </div>
         </div>
-
-        {/* Right – action buttons */}
         <div className="flex flex-wrap items-center gap-2">
           <Link
             href="/dashboard/scan-center"

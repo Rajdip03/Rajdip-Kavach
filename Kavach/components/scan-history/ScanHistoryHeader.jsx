@@ -4,14 +4,12 @@ import Link from 'next/link';
 import { Download, Plus } from 'lucide-react';
 
 /**
- * Scan History Header with breadcrumb, title, subtitle, and action buttons.
  *
  * @param {{ onExportCSV?: () => void }} props
  */
 export default function ScanHistoryHeader({ onExportCSV }) {
   return (
     <div className="flex flex-col gap-4">
-      {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-xs">
         <Link
           href="/dashboard/overview"

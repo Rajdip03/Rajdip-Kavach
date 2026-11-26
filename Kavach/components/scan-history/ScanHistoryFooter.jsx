@@ -2,9 +2,6 @@
 
 import { Lock, ShieldCheck } from 'lucide-react';
 
-/**
- * Footer security and audit reassurance note for Scan History.
- */
 export default function ScanHistoryFooter() {
   return (
     <div className="mt-4 bg-slate-50/80 rounded-2xl p-5 border border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 shadow-2xs">
