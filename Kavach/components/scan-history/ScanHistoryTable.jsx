@@ -15,9 +15,6 @@ import {
   SearchX,
 } from 'lucide-react';
 
-/**
- * Resolves scan type icon and styling.
- */
 function getTypeIcon(type) {
   switch (type) {
     case 'URL':
@@ -33,9 +30,6 @@ function getTypeIcon(type) {
   }
 }
 
-/**
- * Resolves risk badge configuration.
- */
 function getRiskBadge(riskLevel, riskScoreText) {
   switch (riskLevel) {
     case 'critical':
@@ -66,9 +60,6 @@ function getRiskBadge(riskLevel, riskScoreText) {
   }
 }
 
-/**
- * Resolves status pill with colored indicator dot.
- */
 function getStatusPill(status) {
   let dotColor = 'bg-emerald-500';
   let textColor = 'text-slate-700';
@@ -92,9 +83,6 @@ function getStatusPill(status) {
   );
 }
 
-/**
- * Scan History Table component with pagination and responsive behavior.
- */
 export default function ScanHistoryTable({
   scans,
   currentPage = 1,

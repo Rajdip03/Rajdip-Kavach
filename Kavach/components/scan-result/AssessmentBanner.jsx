@@ -3,10 +3,7 @@ import {
   ShieldCheck,
   AlertOctagon,
 } from 'lucide-react';
-
-/**
- * Maps a risk level to its visual configuration.
- */
+ 
 function getRiskConfig(riskLevel) {
   switch (riskLevel) {
     case 'critical':

@@ -34,7 +34,6 @@ export default function TargetDetailsCard({
 }) {
   return (
     <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col gap-4">
-      {/* Header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Crosshair size={18} className="text-slate-400" />
@@ -43,16 +42,12 @@ export default function TargetDetailsCard({
           </span>
         </div>
       </div>
-
-      {/* Target URL */}
       <div className="flex flex-col bg-slate-50 p-3 rounded-lg gap-1">
         <span className="text-xs text-slate-400">Target URL</span>
         <span className="font-mono text-slate-800 break-all font-medium text-[13px]">
           {targetUrl}
         </span>
       </div>
-
-      {/* IP + Domain age row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
         {resolvedIp && (
           <div className="flex flex-col bg-slate-50 p-3 rounded-lg">
@@ -78,8 +73,6 @@ export default function TargetDetailsCard({
           </div>
         )}
       </div>
-
-      {/* SSL Certificate */}
       {sslIssuer && (
         <div className="flex flex-col bg-slate-50 p-3 rounded-lg gap-1">
           <div className="flex items-center justify-between">
@@ -97,8 +90,6 @@ export default function TargetDetailsCard({
           )}
         </div>
       )}
-
-      {/* Redirect chain */}
       {redirectChain && redirectChain.length > 1 && (
         <div className="flex flex-col bg-slate-50 p-3 rounded-lg gap-1">
           <span className="text-xs text-slate-400">Redirect Chain Detected</span>
@@ -107,11 +98,10 @@ export default function TargetDetailsCard({
               <span key={i} className="flex items-center gap-2">
                 {i > 0 && <ArrowRight size={13} className="text-slate-400" />}
                 <span
-                  className={`px-2 py-0.5 rounded ${
-                    i === redirectChain.length - 1
-                      ? 'text-red-600 font-semibold'
-                      : 'bg-slate-100'
-                  }`}
+                  className={`px-2 py-0.5 rounded ${i === redirectChain.length - 1
+                    ? 'text-red-600 font-semibold'
+                    : 'bg-slate-100'
+                    }`}
                 >
                   {hop}
                 </span>

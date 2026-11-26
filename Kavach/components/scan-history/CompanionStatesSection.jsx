@@ -9,9 +9,6 @@ import {
   Layers,
 } from 'lucide-react';
 
-/**
- * Section 2: Empty State & Skeleton Loading States (2-column grid).
- */
 export default function CompanionStatesSection() {
   return (
     <div className="flex flex-col gap-4">

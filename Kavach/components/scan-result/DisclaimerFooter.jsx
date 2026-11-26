@@ -1,8 +1,5 @@
 import { ShieldCheck, Lock } from 'lucide-react';
 
-/**
- * Probabilistic Risk Advisory Notice – footer disclaimer.
- */
 export default function DisclaimerFooter() {
   return (
     <div className="mt-8 bg-slate-50 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border border-slate-100">

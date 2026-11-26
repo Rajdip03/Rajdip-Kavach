@@ -10,10 +10,6 @@ import {
   Clock,
 } from 'lucide-react';
 
-/**
- * Section 1: Mobile View Layout (Stacked Responsive Cards).
- * Demonstrates how tabular rows transform into accessible touch-friendly stacked cards on mobile viewports.
- */
 export default function MobilePreviewSection() {
   return (
     <div className="flex flex-col gap-4">

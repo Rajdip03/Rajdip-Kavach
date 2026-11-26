@@ -29,7 +29,6 @@ export default function SafetyActions({ warningTitle, warningDescription, action
 
   return (
     <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col gap-6">
-      {/* Header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <CheckCircle size={20} className="text-[#0051D5]" />
@@ -39,8 +38,6 @@ export default function SafetyActions({ warningTitle, warningDescription, action
         </div>
         <span className="text-xs text-slate-400">Step-by-step containment</span>
       </div>
-
-      {/* Critical warning callout */}
       {warningTitle && (
         <div className="bg-red-50 p-4 rounded-xl flex items-start gap-3 border border-red-100">
           <Ban size={20} className="text-red-500 flex-shrink-0 mt-0.5" />
@@ -52,8 +49,6 @@ export default function SafetyActions({ warningTitle, warningDescription, action
           </div>
         </div>
       )}
-
-      {/* Action steps */}
       <div className="flex flex-col gap-2.5">
         {actions.map((action, i) => (
           <label

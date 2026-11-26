@@ -8,9 +8,6 @@ import MobilePreviewSection from './MobilePreviewSection';
 import CompanionStatesSection from './CompanionStatesSection';
 import ScanHistoryFooter from './ScanHistoryFooter';
 
-/**
- * 6 realistic, high-fidelity sample records specified by design.
- */
 export const SAMPLE_SCANS = [
   {
     id: 'KW-849204',
@@ -104,9 +101,6 @@ export const SAMPLE_SCANS = [
   },
 ];
 
-/**
- * ScanHistoryPage – main orchestrator for the Scan History view.
- */
 export default function ScanHistoryPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [scanTypeFilter, setScanTypeFilter] = useState('all');
