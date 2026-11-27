@@ -1,16 +1,11 @@
-import { Settings } from 'lucide-react';
+import SettingsPage from '@/components/settings/SettingsPage';
 
-export default function SettingsPage() {
-  return (
-    <div className="max-w-[1200px] mx-auto py-6">
-      <div className="bg-white rounded-2xl p-10 shadow-sm border border-slate-100 flex flex-col items-center text-center gap-4">
-        <div className="w-14 h-14 bg-slate-100 rounded-2xl flex items-center justify-center">
-          <Settings className="w-7 h-7 text-slate-600" />
-        </div>
-        <h1 className="text-2xl font-semibold text-[#101B35]">Settings</h1>
-        <p className="text-slate-500 max-w-md text-sm">Manage your account preferences, notifications, and security settings. Coming soon.</p>
-      </div>
-    </div>
-  );
+export const metadata = {
+  title: 'Settings | Kavach Personal Defense',
+  description:
+    'Manage your personal profile, threat notification preferences, multi-device sessions, and privacy safeguards.',
+};
+
+export default function Page() {
+  return <SettingsPage />;
 }
-
