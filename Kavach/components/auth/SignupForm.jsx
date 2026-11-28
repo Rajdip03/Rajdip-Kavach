@@ -162,7 +162,7 @@ export default function SignupForm() {
           <ShieldCheck size={28} />
         </div>
         <h2 className="text-2xl font-bold text-slate-900 tracking-tight">
-          Welcome to Kawach, {trimmedName.split(' ')[0]}
+          Welcome to Kavach, {trimmedName.split(' ')[0]}
         </h2>
         <p className="text-sm text-slate-500 leading-relaxed">
           Your personal defense perimeter is ready. Redirecting you to your dashboard now...
@@ -183,7 +183,7 @@ export default function SignupForm() {
       {/* Form Header */}
       <div>
         <h2 className="text-2xl sm:text-[28px] font-bold text-slate-900 tracking-tight leading-tight">
-          Create your Kawach account
+          Create your Kavach account
         </h2>
         <p className="text-sm text-slate-500 mt-1.5 mb-6">
           Start protecting your digital communications in under a minute.
